@@ -101,11 +101,11 @@ for host in $hosts; do
                 | cut -d "b" -f1)
 
         if (echo "$SPEED" | grep -q "M"); then
-                echo "$SPEED" | awk '{a+=$1} END{print a*1000000}'
+                echo "$SPEED" | awk '{a+=$1} END{print a*1048576}'
         elif (echo "$SPEED" | grep -q "K"); then
-                echo "$SPEED" | awk '{a+=$1} END{print a*1000}'
+                echo "$SPEED" | awk '{a+=$1} END{print a*1024}'
         elif (echo "$SPEED" | grep -q "G"); then
-                echo "$SPEED" | awk '{a+=$1} END{print a*1000000000}'
+                echo "$SPEED" | awk '{a+=$1} END{print a*1073742000}'
         else
                 echo "Error: no data (timeout)" >&2
         fi
